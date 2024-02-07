@@ -21,8 +21,8 @@ public class StudentController {
         var verify = this.verifyHasCertificationUseCase.execute(verifyHasCertification);
         System.out.println(verify);
         if (verify) {
-            return "deu certo";
+            return "nao pode fazer";
         }
-        return "deu errado";
+        return "pode fazer";
     }
 }
