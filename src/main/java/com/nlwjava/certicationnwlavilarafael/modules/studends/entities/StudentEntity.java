@@ -1,17 +1,26 @@
 package com.nlwjava.certicationnwlavilarafael.modules.studends.entities;
 
 import java.util.List;
-import java.util.UUID;
-
+import com.nlwjava.certicationnwlavilarafael.modules.baseModel.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentEntity {
-    private UUID id;
+@Entity(name = "students")
+public class StudentEntity extends BaseEntity {
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @OneToMany(mappedBy = "studentEntity")
     private List<CertificationStudentEntity> certificationStudentEntity;
+
 }
