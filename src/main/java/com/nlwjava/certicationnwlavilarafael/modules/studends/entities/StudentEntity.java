@@ -1,6 +1,8 @@
 package com.nlwjava.certicationnwlavilarafael.modules.studends.entities;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.nlwjava.certicationnwlavilarafael.modules.baseModel.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +25,7 @@ public class StudentEntity extends BaseEntity {
     private String email;
 
     @OneToMany(mappedBy = "studentEntity")
+    @JsonBackReference
     private List<CertificationStudentEntity> certificationStudentEntity;
 
 }
