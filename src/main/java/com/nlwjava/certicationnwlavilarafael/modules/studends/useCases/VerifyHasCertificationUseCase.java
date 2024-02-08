@@ -7,7 +7,7 @@ import com.nlwjava.certicationnwlavilarafael.modules.studends.dto.VerifyHasCerti
 import com.nlwjava.certicationnwlavilarafael.modules.studends.repositories.CertificationStudentRepository;
 
 @Service
-public class VerifyHasCertificationUseCases {
+public class VerifyHasCertificationUseCase {
     @Autowired
     private CertificationStudentRepository certificationStudentRepository;
 
