@@ -1,6 +1,7 @@
 package com.nlwjava.certicationnwlavilarafael.modules.studends.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +33,14 @@ public class StudentController {
     }
 
     @PostMapping("/certification/answer")
-    public StudentCertificationAnswerDTO certificationAnswer(
-            @RequestBody StudentCertificationAnswerDTO studentCertificationAnswerDTO) {
-        return studentCertificationAnswersUseCase.execute((studentCertificationAnswerDTO));
+    public ResponseEntity<Object> certificationAnswer(
+            @RequestBody StudentCertificationAnswerDTO studentCertificationAnswerDTO) throws Exception {
+        try {
+            var result = studentCertificationAnswersUseCase.execute((studentCertificationAnswerDTO));
+            return ResponseEntity.ok().body(result);
+
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
