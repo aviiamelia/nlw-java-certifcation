@@ -37,7 +37,7 @@ Esse projeto foi criado durante a Next level week, provida pela RockeSeat.
 
 ## Usage
 
-
+```
 1. Create the container for the database with 
 ```bash
 docker compose up -d 
