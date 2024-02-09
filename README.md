@@ -37,7 +37,7 @@ Esse projeto foi criado durante a Next level week, provida pela RockeSeat.
 
 ## Usage
 
-
+```
 1. Create the container for the database with 
 ```bash
 docker compose up -d 
@@ -46,7 +46,7 @@ docker compose up -d
 ```bash
 mvn spring-boot:run 
 ```
-API will be accessible at http://localhost:8080
+API will be accessible at http://localhost:8060
 
 ## Features
 
